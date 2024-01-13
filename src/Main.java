@@ -1,5 +1,4 @@
-import br.com.alura.loja.imposto.CalculadoraDeImpostos;
-import br.com.alura.loja.imposto.ISS;
+import br.com.alura.loja.desconto.CalculadoraDeDescontos;
 import br.com.alura.loja.orcamento.Orcamento;
 
 import java.math.BigDecimal;
@@ -7,8 +6,11 @@ import java.math.BigDecimal;
 public class Main {
     public static void main(String[] args) {
 
-        Orcamento orcamento = new Orcamento(new BigDecimal("100"), );
-        CalculadoraDeImpostos calculadora = new CalculadoraDeImpostos();
-        System.out.println(calculadora.calcular(orcamento,new ISS()));
+        Orcamento primeiro = new Orcamento(new BigDecimal("100"), 6);
+        Orcamento segundo = new Orcamento(new BigDecimal("1000"), 1);
+        //CalculadoraDeImpostos calculadora = new CalculadoraDeImpostos();
+        CalculadoraDeDescontos calculadora = new CalculadoraDeDescontos();
+        System.out.println(calculadora.calcular(primeiro));
+        System.out.println(calculadora.calcular(segundo));
     }
 }
